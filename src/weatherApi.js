@@ -1,7 +1,4 @@
-// Redux:
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-
-// Axios:
 import axios from "axios";
 
 // Action:
@@ -12,7 +9,6 @@ export const fetchWeatherAction = createAsyncThunk(
       const { data } = await axios.get(
         `https://api.openweathermap.org/data/2.5/weather?q=${payload}&units=imperial,&APPID=9d4bc884118c415fc015ad23d6dec881`
       );
-      console.log(data, "data");
       return data;
     } catch (error) {
       if (!error?.response) throw error;
